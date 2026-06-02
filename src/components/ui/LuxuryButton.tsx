@@ -20,9 +20,9 @@ export default function LuxuryButton({
   type = "button",
 }: LuxuryButtonProps) {
   const variants = {
-    primary: "bg-luxury-black text-luxury-ivory hover:bg-luxury-charcoal",
-    outline: "border border-luxury-black text-luxury-black hover:bg-luxury-black hover:text-luxury-ivory",
-    ghost: "text-luxury-black hover:bg-luxury-charcoal/10",
+    primary: "bg-luxury-roseGold text-luxury-ivory hover:opacity-90",
+    outline: "border border-luxury-roseGold text-luxury-roseGold hover:bg-luxury-roseGold hover:text-luxury-ivory",
+    ghost: "text-luxury-roseGold hover:bg-luxury-roseGold/10",
   };
 
   return (
