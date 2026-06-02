@@ -9,6 +9,7 @@ import { LUXURY_EASE_OUT } from "@/lib/utils";
 
 export default function EventPopup() {
   const [isOpen, setIsOpen] = useState(false);
+  const rsvpLink = "https://docs.google.com/forms/d/e/1FAIpQLSfqkcVqGLwHq9GR36-rxEX6kI0gCe3h8xz1w7h1IpoNHImE7g/viewform";
 
   useEffect(() => {
     // Show popup after 3 seconds
@@ -91,16 +92,18 @@ export default function EventPopup() {
                 </div>
               </div>
 
-              <LuxuryButton 
-                onClick={closePopup}
-                className="w-full"
-              >
-                RSVP FOR VIP ACCESS
-              </LuxuryButton>
+              <a href={rsvpLink} target="_blank" rel="noopener noreferrer">
+                <LuxuryButton 
+                  onClick={closePopup}
+                  className="w-full"
+                >
+                  RSVP FOR VIP ACCESS
+                </LuxuryButton>
+              </a>
               
               <button 
                 onClick={closePopup}
-                className="mt-6 text-[10px] uppercase tracking-[0.3em] text-luxury-charcoal/40 hover:text-luxury-black transition-colors"
+                className="mt-6 text-[10px] uppercase tracking-[0.3em] text-luxury-charcoal/40 hover:text-luxury-black transition-colors mx-auto block"
               >
                 Remind me later
               </button>

@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { cn, LUXURY_EASE_OUT } from "@/lib/utils";
 import { HiOutlineMenuAlt4, HiX } from "react-icons/hi";
+import { RiInstagramLine, RiFacebookCircleLine } from "react-icons/ri";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -13,6 +14,11 @@ const navLinks = [
   { name: "Apparel", href: "/apparel" },
   { name: "Accessories", href: "/accessories" },
   { name: "About", href: "/about" },
+];
+
+const socialLinks = [
+  { name: "Instagram", href: "https://www.instagram.com/keenascutestuff/", icon: RiInstagramLine },
+  { name: "Facebook", href: "https://www.facebook.com/keena.woods/", icon: RiFacebookCircleLine },
 ];
 
 export default function Navbar() {
@@ -56,12 +62,33 @@ export default function Navbar() {
         )}
       >
         <div className="container-custom h-12 md:h-14 flex items-center justify-between">
-          <Link href="/" className={cn(
-            "font-serif text-2xl tracking-tighter hover:opacity-70 transition-all duration-500",
-            !scrolled && !isOpen ? "text-luxury-ivory" : "text-luxury-black"
-          )}>
-            KEENA'S
-          </Link>
+          <div className="flex items-center gap-8">
+            <Link href="/" className={cn(
+              "font-serif text-2xl tracking-tighter hover:opacity-70 transition-all duration-500",
+              !scrolled && !isOpen ? "text-luxury-ivory" : "text-luxury-black"
+            )}>
+              KEENA'S
+            </Link>
+
+            {/* Desktop Socials */}
+            <div className="hidden lg:flex items-center gap-4 border-l border-luxury-black/10 pl-8 ml-2">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "transition-all duration-500 hover:text-luxury-roseGold",
+                    !scrolled ? "text-luxury-ivory/70" : "text-luxury-charcoal/60"
+                  )}
+                  aria-label={social.name}
+                >
+                  <social.icon size={20} />
+                </a>
+              ))}
+            </div>
+          </div>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-12">
@@ -109,7 +136,7 @@ export default function Navbar() {
               variants={{
                 animate: { transition: { staggerChildren: 0.1 } }
               }}
-              className="flex flex-col items-center space-y-10"
+              className="flex flex-col items-center space-y-8"
             >
               {navLinks.map((link) => (
                 <motion.div
@@ -137,10 +164,22 @@ export default function Navbar() {
                   animate: { opacity: 1 }
                 }}
                 transition={{ delay: 0.6 }}
-                className="pt-12 flex gap-8"
+                className="pt-12 flex flex-col items-center gap-6"
               >
-                <a href="#" className="text-[10px] uppercase tracking-widest text-luxury-charcoal/40">Instagram</a>
-                <a href="#" className="text-[10px] uppercase tracking-widest text-luxury-charcoal/40">TikTok</a>
+                <div className="flex gap-8">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-luxury-charcoal hover:text-luxury-roseGold transition-colors flex flex-col items-center gap-2"
+                    >
+                      <social.icon size={32} />
+                      <span className="text-[9px] uppercase tracking-widest opacity-50">{social.name}</span>
+                    </a>
+                  ))}
+                </div>
               </motion.div>
             </motion.div>
           </motion.div>

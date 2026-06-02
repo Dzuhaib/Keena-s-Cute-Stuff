@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RiInstagramLine, RiFacebookCircleLine } from "react-icons/ri";
 
 const footerLinks = [
   {
@@ -27,6 +28,11 @@ const footerLinks = [
       { name: "Shipping Info", href: "#" },
     ],
   },
+];
+
+const socialLinks = [
+  { name: "Instagram", href: "https://www.instagram.com/keenascutestuff/", icon: RiInstagramLine },
+  { name: "Facebook", href: "https://www.facebook.com/keena.woods/", icon: RiFacebookCircleLine },
 ];
 
 export default function Footer() {
@@ -84,9 +90,18 @@ export default function Footer() {
             © 2026 KEENA'S CUTE STUFF. ALL RIGHTS RESERVED.
           </p>
           <div className="flex items-center gap-6 md:gap-10">
-            <a href="#" className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-luxury-charcoal/40 hover:text-luxury-roseGold transition-all">Instagram</a>
-            <a href="#" className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-luxury-charcoal/40 hover:text-luxury-roseGold transition-all">TikTok</a>
-            <a href="#" className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-luxury-charcoal/40 hover:text-luxury-roseGold transition-all">Pinterest</a>
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-luxury-charcoal/40 hover:text-luxury-roseGold transition-all flex items-center gap-2"
+              >
+                <social.icon size={16} />
+                {social.name}
+              </a>
+            ))}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import PexelsImage from "@/components/ui/PexelsImage";
 import LuxuryButton from "@/components/ui/LuxuryButton";
 import { LUXURY_EASE_OUT, revealAnimation } from "@/lib/utils";
@@ -16,6 +17,8 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+
+  const rsvpLink = "https://docs.google.com/forms/d/e/1FAIpQLSfqkcVqGLwHq9GR36-rxEX6kI0gCe3h8xz1w7h1IpoNHImE7g/viewform";
 
   return (
     <section 
@@ -79,12 +82,16 @@ export default function Hero() {
             variants={revealAnimation}
             className="flex flex-col sm:flex-row items-center justify-center gap-5 md:gap-6 w-full px-10"
           >
-            <LuxuryButton className="w-full sm:w-auto min-w-[220px] py-6 text-xs tracking-[0.3em]">
-              Explore Collection
-            </LuxuryButton>
-            <LuxuryButton variant="outline" className="w-full sm:w-auto min-w-[220px] py-6 text-xs tracking-[0.3em] border-luxury-ivory text-luxury-ivory hover:bg-luxury-ivory hover:text-luxury-black">
-              Visit Store
-            </LuxuryButton>
+            <a href={rsvpLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <LuxuryButton className="w-full min-w-[220px] py-6 text-xs tracking-[0.3em]">
+                RSVP NOW
+              </LuxuryButton>
+            </a>
+            <Link href="/about" className="w-full sm:w-auto">
+              <LuxuryButton variant="outline" className="w-full min-w-[220px] py-6 text-xs tracking-[0.3em] border-luxury-ivory text-luxury-ivory hover:bg-luxury-ivory hover:text-luxury-black">
+                OUR STORY
+              </LuxuryButton>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

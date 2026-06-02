@@ -12,6 +12,8 @@ const schedule = [
 ];
 
 export default function GrandOpening() {
+  const rsvpLink = "https://docs.google.com/forms/d/e/1FAIpQLSfqkcVqGLwHq9GR36-rxEX6kI0gCe3h8xz1w7h1IpoNHImE7g/viewform";
+
   return (
     <section className="py-20 md:py-32 bg-luxury-black text-luxury-ivory overflow-hidden relative">
       {/* Background Image Overlay */}
@@ -73,9 +75,11 @@ export default function GrandOpening() {
             </motion.div>
 
             <motion.div variants={revealAnimation}>
-              <LuxuryButton className="w-full sm:w-auto bg-luxury-ivory text-luxury-black hover:bg-luxury-roseGold hover:text-luxury-ivory transition-colors duration-500">
-                RSVP For VIP Access
-              </LuxuryButton>
+              <a href={rsvpLink} target="_blank" rel="noopener noreferrer">
+                <LuxuryButton className="w-full sm:w-auto bg-luxury-ivory text-luxury-black hover:bg-luxury-roseGold hover:text-luxury-ivory transition-colors duration-500">
+                  RSVP For VIP Access
+                </LuxuryButton>
+              </a>
             </motion.div>
           </motion.div>
 

@@ -15,6 +15,8 @@ const schedule = [
 ];
 
 export default function EventPage() {
+  const rsvpLink = "https://docs.google.com/forms/d/e/1FAIpQLSfqkcVqGLwHq9GR36-rxEX6kI0gCe3h8xz1w7h1IpoNHImE7g/viewform";
+
   return (
     <>
       <Navbar />
@@ -116,7 +118,9 @@ export default function EventPage() {
                 </div>
                 
                 <div className="pt-8">
-                  <LuxuryButton className="w-full">Request Invitation</LuxuryButton>
+                  <a href={rsvpLink} target="_blank" rel="noopener noreferrer">
+                    <LuxuryButton className="w-full">Request Invitation</LuxuryButton>
+                  </a>
                   <p className="text-[10px] text-center mt-6 uppercase tracking-[0.2em] text-luxury-charcoal/40 font-medium">
                     Limited Capacity — VIP Members Prioritized
                   </p>
