@@ -79,8 +79,8 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "transition-all duration-500 hover:text-luxury-roseGold",
-                    !scrolled ? "text-luxury-ivory/70" : "text-luxury-charcoal/60"
+                    "transition-all duration-500 hover:opacity-80 text-luxury-roseGold",
+                    !scrolled ? "text-luxury-roseGold" : "text-luxury-roseGold"
                   )}
                   aria-label={social.name}
                 >
@@ -173,7 +173,7 @@ export default function Navbar() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-luxury-charcoal hover:text-luxury-roseGold transition-colors flex flex-col items-center gap-2"
+                    className="text-luxury-roseGold hover:opacity-80 transition-opacity flex flex-col items-center gap-2"
                     >
                       <social.icon size={32} />
                       <span className="text-[9px] uppercase tracking-widest opacity-50">{social.name}</span>

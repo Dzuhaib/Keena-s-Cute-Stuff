@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import PexelsImage from "@/components/ui/PexelsImage";
 import { LUXURY_EASE_OUT, revealAnimation } from "@/lib/utils";
 
@@ -16,9 +17,9 @@ export default function AboutSection() {
             transition={{ duration: 1.2, ease: LUXURY_EASE_OUT }}
             className="relative aspect-square order-2 lg:order-1"
           >
-            <PexelsImage
-              query="luxury boutique storefront"
-              alt="Luxury Fashion Craftsmanship"
+            <Image
+              src="/assets/Exterior Storefront Photo.png"
+              alt="Keena's Cute Stuff Storefront"
               fill
               className="object-cover"
             />

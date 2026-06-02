@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import PexelsImage from "@/components/ui/PexelsImage";
 import { LUXURY_EASE_OUT, revealAnimation } from "@/lib/utils";
 import { HiOutlineLocationMarker, HiOutlineClock, HiOutlinePhone } from "react-icons/hi";
@@ -64,9 +65,9 @@ export default function VisitBoutique() {
             transition={{ duration: 1.5, ease: LUXURY_EASE_OUT }}
             className="lg:col-span-7 relative aspect-video lg:aspect-square overflow-hidden"
           >
-            <PexelsImage
-              query="luxury boutique interior"
-              alt="Keena's Cute Stuff Flagship Boutique"
+            <Image
+              src="/assets/Interior Shop Photo.webp"
+              alt="Keena's Cute Stuff Flagship Boutique Interior"
               fill
               className="object-cover"
             />

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import PexelsImage from "@/components/ui/PexelsImage";
 import { LUXURY_EASE_OUT, revealAnimation, cn } from "@/lib/utils";
 
@@ -76,9 +77,14 @@ export default function CustomerMoments() {
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-luxury-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                <span className="text-luxury-ivory text-[10px] uppercase tracking-[0.3em] font-medium border border-luxury-ivory/30 px-6 py-3 backdrop-blur-sm">
+                <Link 
+                  href="https://www.instagram.com/keenascutestuff/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-luxury-ivory text-[10px] uppercase tracking-[0.3em] font-medium border border-luxury-ivory/30 px-6 py-3 backdrop-blur-sm hover:bg-luxury-roseGold hover:border-luxury-roseGold transition-colors duration-300"
+                >
                   View Story
-                </span>
+                </Link>
               </div>
             </motion.div>
           ))}
