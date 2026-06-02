@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   description: "Luxury Accessories, Jewelry & Apparel Curated For Every Occasion. Futuristic boutique experience in Collingdale, PA.",
 };
 
+export const viewport = {
+  themeColor: "#f850b8",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

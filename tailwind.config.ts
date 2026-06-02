@@ -17,7 +17,7 @@ export default {
           black: "#1A1A1A",
           charcoal: "#2D2D2D",
           gold: "#D4AF37",
-          roseGold: "#B76E79",
+          roseGold: "#f850b8",
           beige: "#E5D3B3",
         },
       },
