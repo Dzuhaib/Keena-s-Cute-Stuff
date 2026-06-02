@@ -64,8 +64,8 @@ export default function Navbar() {
         <div className="container-custom h-12 md:h-14 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" className={cn(
-              "font-serif text-2xl tracking-tighter hover:opacity-70 transition-all duration-500",
-              !scrolled && !isOpen ? "text-luxury-ivory" : "text-luxury-black"
+              "font-serif text-2xl tracking-tighter hover:opacity-90 transition-all duration-500 px-4 py-1.5 rounded-[10px]",
+              !scrolled && !isOpen ? "bg-luxury-roseGold text-luxury-ivory" : "bg-luxury-roseGold text-luxury-ivory"
             )}>
               KEENA'S
             </Link>
